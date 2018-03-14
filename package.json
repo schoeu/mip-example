@@ -18,8 +18,10 @@
   "author": "MIP",
   "license": "MIT",
   "dependencies": {
+    "art-template": "^4.12.2",
     "fs-extra": "^5.0.0",
     "koa": "^2.5.0",
+    "koa-art-template": "^1.1.1",
     "koa-router": "^7.4.0",
     "marked": "^0.3.17",
     "moment": "^2.21.0",

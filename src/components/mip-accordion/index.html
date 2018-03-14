@@ -1,0 +1,123 @@
+<h1 id="mip-accordion%20%E6%8A%98%E5%8F%A0%E8%8A%82%E7%82%B9">mip-accordion 折叠节点</h1><p>折叠隐藏节点，可记录用户上次行为。</p>
+<table>
+<thead>
+<tr>
+<th>标题</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>通用</td>
+</tr>
+<tr>
+<td>支持布局</td>
+<td>responsive, fixed-height, fill, container, fixed</td>
+</tr>
+<tr>
+<td>所需脚本</td>
+<td><a href="https://c.mipcdn.com/static/v1/mip-accordion/mip-accordion.js">https://c.mipcdn.com/static/v1/mip-accordion/mip-accordion.js</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="%E7%A4%BA%E4%BE%8B">示例</h2><h3 id="%E6%A0%87%E9%A2%98%E5%8A%A0%E5%86%85%E5%AE%B9%E5%BD%A2%E5%BC%8F">标题加内容形式</h3><p><code>&lt;section&gt;</code> 的第一个子节点为按钮，第二个子节点为隐藏目标节点。</p>
+<p>[info]页面加载初默认隐藏的节点，需要添加 <code>class=&quot;mip-accordion-content&quot;</code>。</p>
+<pre><code class="lang-html">&lt;mip-accordion sessions-key=&quot;mip_1&quot; animatetime=&#39;0.24&#39;&gt;
+    &lt;section&gt;
+        &lt;h4&gt;下拉第一个&lt;/h4&gt;
+        &lt;p class=&quot;mip-accordion-content&quot;&gt;我说你是人间的四月天；笑声点亮了四面风；轻灵在春的光艳中交舞着变。你是四月早天里的云烟，黄昏吹着风的软，星子在无意中闪，&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section  expanded=&quot;open&quot;&gt;
+        &lt;h4&gt;下拉第二个&lt;/h4&gt;
+        &lt;p&gt;细雨点洒在花前。那轻，那娉婷，你是，鲜妍百花的冠冕你戴着，你是天真，庄严，你是夜夜的月圆。&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+        &lt;h4&gt;下拉第三个&lt;/h4&gt;
+        &lt;mip-img layout=&quot;responsive&quot; width=&quot;400&quot; height=&quot;200&quot; src=&quot;https://www.mipengine.org/static/img/sample_01.jpg&quot; class=&quot;mip-accordion-content&quot;&gt;&lt;/mip-img&gt;
+    &lt;/section&gt;
+&lt;/mip-accordion&gt;
+</code></pre>
+<h3 id="%E6%A0%87%E9%A2%98%E5%8A%A0%E5%86%85%E5%AE%B9%E5%BD%A2%E5%BC%8F-%E6%89%8B%E5%8A%A8">标题加内容形式-手动</h3><pre><code class="lang-html">&lt;mip-accordion sessions-key=&quot;mip_2&quot; type=&quot;manual&quot; animatetime=&#39;0.24&#39;&gt;
+    &lt;section&gt;
+        &lt;h4&gt;下拉第一个&lt;/h4&gt;
+        &lt;p class=&quot;mip-accordion-content&quot;&gt;我说你是人间的四月天；笑声点亮了四面风；轻灵在春的光艳中交舞着变。你是四月早天里的云烟，黄昏吹着风的软，星子在无意中闪，&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section  expanded=&quot;open&quot;&gt;
+        &lt;h4&gt;下拉第二个&lt;/h4&gt;
+        &lt;p&gt;细雨点洒在花前。那轻，那娉婷，你是，鲜妍百花的冠冕你戴着，你是天真，庄严，你是夜夜的月圆。&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+        &lt;h4&gt;下拉第三个&lt;/h4&gt;
+        &lt;mip-img layout=&quot;responsive&quot; width=&quot;400&quot; height=&quot;200&quot; src=&quot;https://www.mipengine.org/static/img/sample_01.jpg&quot; class=&quot;mip-accordion-content&quot;&gt;&lt;/mip-img&gt;
+    &lt;/section&gt;
+&lt;/mip-accordion&gt;
+</code></pre>
+<h3 id="%E6%A0%87%E9%A2%98%E5%88%87%E6%8D%A2%E5%BD%A2%E5%BC%8F">标题切换形式</h3><pre><code class="lang-html">&lt;mip-accordion sessions-key=&quot;mip_3&quot; animatetime=&#39;0.24&#39;&gt;
+    &lt;section&gt;
+        &lt;h4&gt;
+          &lt;span class=&quot;show-more&quot;&gt;显示更多&lt;/span&gt;
+          &lt;span class=&quot;show-less&quot;&gt;收起&lt;/span&gt;
+          &lt;/h4&gt;
+        &lt;p class=&quot;mip-accordion-content&quot;&gt;显示显示收起收起显示显示收起收起显示显示收起收起显示显示收起收起&lt;/p&gt;
+      &lt;/section&gt;
+  &lt;/mip-accordion&gt;
+</code></pre>
+<h3 id="%E9%85%8D%E7%BD%AE%E5%8F%AA%E5%B1%95%E5%BC%80%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9">配置只展开一个节点</h3><pre><code class="lang-html">&lt;mip-accordion sessions-key=&quot;mip_4&quot; expaned-limit&gt;
+    &lt;section&gt;
+        &lt;h4&gt;下拉第一个&lt;/h4&gt;
+        &lt;p class=&quot;mip-accordion-content&quot;&gt;我说你是人间的四月天；笑声点亮了四面风；轻灵在春的光艳中交舞着变。你是四月早天里的云烟，黄昏吹着风的软，星子在无意中闪，&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section  expanded&gt;
+        &lt;h4&gt;下拉第二个&lt;/h4&gt;
+        &lt;p&gt;细雨点洒在花前。那轻，那娉婷，你是，鲜妍百花的冠冕你戴着，你是天真，庄严，你是夜夜的月圆。&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+        &lt;h4&gt;下拉第三个&lt;/h4&gt;
+        &lt;mip-img
+            layout=&quot;responsive&quot;
+            width=&quot;400&quot;
+            height=&quot;200&quot;
+            src=&quot;https://www.mipengine.org/static/img/sample_01.jpg&quot; class=&quot;mip-accordion-content&quot;&gt;
+        &lt;/mip-img&gt;
+    &lt;/section&gt;
+  &lt;/mip-accordion&gt;
+</code></pre>
+<h3 id="%E8%BF%9B%E8%A1%8C%E5%B5%8C%E5%A5%97">进行嵌套</h3><pre><code class="lang-html">&lt;mip-accordion sessions-key=&quot;mip_5&quot;&gt;
+    &lt;section&gt;
+        &lt;h2&gt;下拉第一个&lt;/h2&gt;
+        &lt;div&gt;我说你是人间的四月天；笑声点亮了四面风；轻灵在春的光艳中交舞着变。你是四月早天里的云烟，黄昏吹着风的软，星子在无意中闪，
+            &lt;section&gt;
+                &lt;h3&gt;点击第一处进行下拉&lt;/h3&gt;
+                &lt;div&gt;雪化后那片鹅黄，你像；新鲜初放芽的绿，你是；柔嫩喜悦,水光浮动着你梦期待中的白莲。
+                    &lt;section&gt;
+                        &lt;h4&gt;再次点击进行下拉&lt;/h4&gt;
+                        &lt;div&gt;你是一树一树的花开，是燕在梁间呢喃，——你是爱，是暖，是希望，你是人间的四月天！&lt;/div&gt;
+                    &lt;/section&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+            &lt;section&gt;
+                &lt;h3&gt;点击第二处进行下拉&lt;/h3&gt;
+                &lt;div&gt;雪化后那片鹅黄，你像；新鲜初放芽的绿，你是；柔嫩喜悦,水光浮动着你梦期待中的白莲。&lt;/div&gt;
+            &lt;/section&gt;
+            &lt;section&gt;
+                &lt;h3&gt;点击第三处进行下拉&lt;/h3&gt;
+                &lt;div&gt;雪化后那片鹅黄，你像；新鲜初放芽的绿，你是；柔嫩喜悦,水光浮动着你梦期待中的白莲。&lt;/div&gt;
+            &lt;/section&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+        &lt;h2&gt;下拉第二个&lt;/h2&gt;
+        &lt;div&gt;细雨点洒在花前。那轻，那娉婷，你是，鲜妍百花的冠冕你戴着，你是天真，庄严，你是夜夜的月圆。&lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+        &lt;h2&gt;下拉第三个&lt;/h2&gt;
+        &lt;mip-img layout=&quot;responsive&quot; width=&quot;400&quot; height=&quot;200&quot; src=&quot;https://www.mipengine.org/static/img/sample_01.jpg&quot;&gt;&lt;/mip-img&gt;
+    &lt;/section&gt;
+&lt;/mip-accordion&gt;
+</code></pre>
+<h2 id="%E5%B1%9E%E6%80%A7">属性</h2><h3 id="sessions-key">sessions-key</h3><p>说明：组件唯一标识符，用于区分同个页面中多个 <code>&lt;mip-accordion&gt;</code> 以还原用户上次操作<br>必选项：是<br>类型：字符串</p>
+<h3 id="type">type</h3><p>说明：类型，区分自动根据 <code>&lt;session&gt;</code> 记录展开节点，还是手动配置默认展开节点<br>必选项：否<br>类型：字符串<br>单位：无<br>取值：<code>automatic</code>, <code>manual</code><br>默认值：<code>automatic</code></p>
+<h3 id="expanded">expanded</h3><p>说明：默认展开的 <code>&lt;mip-accordion&gt;</code> 子节点需要配置此属性，只有在 <code>&lt;mip-accordion&gt;</code> 的 <code>type</code> 属性值为 <code>manual</code> 时才会生效<br>必选项：否<br>类型：字符串<br>单位：无<br>取值：无<br>默认值：无</p>
+<h3 id="expaned-limit">expaned-limit</h3><p>说明：默认可以同时展开多个节点，有此属性时，同时只展开一个节点<br>必选项：否<br>类型：字符串<br>单位：无<br>取值：无<br>默认值：无</p>
+<h3 id="animatetime">animatetime</h3><p>说明：展开收起动画时间，最大为 1 秒，建议为 0.24 秒<br>必选项：否<br>类型：数字（小数）<br>单位：秒<br>默认值：0.24</p>

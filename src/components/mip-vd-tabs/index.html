@@ -1,0 +1,101 @@
+<h1 id="mip-vd-tabs%20tab%20%E5%88%87%E6%8D%A2%E7%BB%84%E4%BB%B6">mip-vd-tabs tab 切换组件</h1><p>在网页中显示标签。标签页内元素较多时不建议使用，会影响页面性能。</p>
+<table>
+<thead>
+<tr>
+<th>标题</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>通用</td>
+</tr>
+<tr>
+<td>支持布局</td>
+<td>responsive, fixed-height, fill, container, fixed</td>
+</tr>
+<tr>
+<td>所需脚本</td>
+<td><a href="https://c.mipcdn.com/static/v1/mip-vd-tabs/mip-vd-tabs.js">https://c.mipcdn.com/static/v1/mip-vd-tabs/mip-vd-tabs.js</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="%E7%A4%BA%E4%BE%8B">示例</h2><p>一共支持5种样式</p>
+<h3 id="%E7%AD%89%E5%88%86%E5%9B%BA%E5%AE%9A%E6%A0%87%E7%AD%BE%E9%A1%B5">等分固定标签页</h3><pre><code class="lang-html">&lt;mip-vd-tabs&gt;
+    &lt;section&gt;
+        &lt;li&gt;第一页&lt;/li&gt;
+        &lt;li&gt;第二页&lt;/li&gt;
+        &lt;li&gt;第三页&lt;/li&gt;
+        &lt;li&gt;第四页&lt;/li&gt;
+    &lt;/section&gt;
+    &lt;div&gt;内容1&lt;/div&gt;
+    &lt;div&gt;内容2&lt;/div&gt;
+    &lt;div&gt;内容3&lt;/div&gt;
+    &lt;div&gt;内容4&lt;/div&gt;
+&lt;/mip-vd-tabs&gt;
+</code></pre>
+<h3 id="%E6%A8%AA%E6%BB%91%E6%A0%87%E7%AD%BE%E9%A1%B5">横滑标签页</h3><pre><code class="lang-html">&lt;mip-vd-tabs allow-scroll&gt;
+    &lt;section&gt;
+        &lt;li&gt;第一季&lt;/li&gt;
+        &lt;li&gt;第二季&lt;/li&gt;
+        &lt;li&gt;第三季&lt;/li&gt;
+        &lt;li&gt;第四季&lt;/li&gt;
+        &lt;li&gt;第五季&lt;/li&gt;
+        &lt;li&gt;第六季更新至09&lt;/li&gt;
+    &lt;/section&gt;
+    &lt;div&gt;内容1&lt;/div&gt;
+    &lt;div&gt;内容2&lt;/div&gt;
+    &lt;div&gt;内容3&lt;/div&gt;
+    &lt;div&gt;内容4&lt;/div&gt;
+    &lt;div&gt;内容5&lt;/div&gt;
+    &lt;div&gt;内容6&lt;/div&gt;
+&lt;/mip-vd-tabs&gt;
+</code></pre>
+<h3 id="%E5%B8%A6%E4%B8%8B%E6%8B%89%E6%8C%89%E9%92%AE%E7%9A%84%E6%A8%AA%E6%BB%91%E6%A0%87%E7%AD%BE%E9%A1%B5">带下拉按钮的横滑标签页</h3><pre><code class="lang-html">&lt;mip-vd-tabs allow-scroll toggle-more toggle-label=&quot;自定义文字&quot;&gt;
+    &lt;section&gt;
+        &lt;li&gt;第一季&lt;/li&gt;
+        &lt;li&gt;第二季&lt;/li&gt;
+        &lt;li&gt;第三季&lt;/li&gt;
+        &lt;li&gt;第四季更新至09&lt;/li&gt;
+    &lt;/section&gt;
+    &lt;div&gt;内容1&lt;/div&gt;
+    &lt;div&gt;内容2&lt;/div&gt;
+    &lt;div&gt;内容3&lt;/div&gt;
+    &lt;div&gt;内容4&lt;/div&gt;
+&lt;/mip-vd-tabs&gt;
+</code></pre>
+<h3 id="%E5%BA%95%E9%83%A8%E6%A0%87%E7%AD%BE%E9%A1%B5">底部标签页</h3><pre><code class="lang-html">&lt;mip-vd-tabs allow-scroll type=&quot;bottom&quot; current=&quot;3&quot;&gt;
+    &lt;div&gt;内容1&lt;/div&gt;
+    &lt;div&gt;内容2&lt;/div&gt;
+    &lt;div&gt;内容3&lt;/div&gt;
+    &lt;div&gt;内容4&lt;/div&gt;
+    &lt;section&gt;
+        &lt;li&gt;第一季&lt;/li&gt;
+        &lt;li&gt;第二季&lt;/li&gt;
+        &lt;li&gt;第三季&lt;/li&gt;
+        &lt;li&gt;第四季更新至09&lt;/li&gt;
+    &lt;/section&gt;
+&lt;/mip-vd-tabs&gt;
+</code></pre>
+<h3 id="%E5%89%A7%E6%83%85%E5%B1%95%E5%BC%80%E6%A0%87%E7%AD%BE%E9%A1%B5">剧情展开标签页</h3><pre><code class="lang-html">&lt;mip-vd-tabs
+    type=&quot;episode&quot;
+    toggle-more
+    toggle-label=&quot;老九门剧情选集&quot;
+    allow-scroll
+    total=&quot;23&quot;
+    current=&quot;11&quot;
+    text-tpl=&quot;看第{{x}}集&quot;
+    link-tpl=&quot;https://www.baidu.com/s?wd=老九门第{{x}}集&quot;&gt;
+&lt;/mip-vd-tabs&gt;
+</code></pre>
+<h2 id="%E5%B1%9E%E6%80%A7">属性</h2><h3 id="type">type</h3><p>说明：一共有三种特型，<code>bottom</code>（底部选项卡），<code>episode</code>（剧情选项卡），不填则为默认特型<br>必填项：否</p>
+<h3 id="allow-scroll">allow-scroll</h3><p>说明：允许滑动<br>必填项：否</p>
+<h3 id="toggle-more">toggle-more</h3><p>说明：是否显示下拉按钮。前置依赖于 <code>allow-scroll</code> 属性<br>必填项：否</p>
+<h3 id="toggle-label">toggle-label</h3><p>说明：下拉说明文字。前置依赖于 <code>toggle-more</code> 属性<br>必填项：否</p>
+<h3 id="current">current</h3><p>说明：当前已选标签页, 从 0 开始计数（<code>current=&quot;3&quot;</code> 表示第 4 个标签页）。当 <code>type=&quot;episode&quot;</code> 时，表示当前剧集，从 1 开始计数（<code>current=&quot;4&quot;</code> 表示第 4 集），默认为 1<br>必填项：否</p>
+<h3 id="total">total</h3><p>说明：剧集总数。前置依赖于 <code>type=&quot;episode&quot;</code>，并且当 <code>type=&quot;episode&quot;</code> 为必填<br>必填项：否</p>
+<h3 id="page-size">page-size</h3><p>说明：每页显示剧集数。前置依赖于 <code>type=&quot;episode&quot;</code>，默认为 50<br>必填项：否</p>
+<h3 id="text-tpl">text-tpl</h3><p>说明：显示在标签页上的剧集文案，&quot;第 {{x}} 集&quot;里的&quot; {{x}} &quot;将被替换成表示集数的数字。前置依赖于 <code>type=&quot;episode&quot;</code><br>必填项：否</p>
+<h3 id="link-tpl">link-tpl</h3><p>说明：标签页和下拉菜单里的剧集跳转链接, 链接里的 &quot;{{x}}&quot; 将被替换成表示集数的数字 前置依赖于 <code>type=&quot;episode&quot;</code>，当 <code>type=&quot;episode&quot;</code> 为必填<br>必填项：否</p>
+<h3 id="head-title">head-title</h3><p>说明：标签页和下拉菜单里的剧集跳转新页面的头部标题。前置依赖于 <code>type=&quot;episode&quot;</code>，当 <code>type=&quot;episode&quot;</code> 为必填<br>必填项：否</p>

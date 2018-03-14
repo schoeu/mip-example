@@ -1,0 +1,67 @@
+<h1 id="mip-fixed%20%E6%82%AC%E6%B5%AE%E5%B8%83%E5%B1%80">mip-fixed 悬浮布局</h1><p>悬浮元素整体使用方案。</p>
+<table>
+<thead>
+<tr>
+<th>标题</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>通用</td>
+</tr>
+<tr>
+<td>支持布局</td>
+<td>N/S</td>
+</tr>
+<tr>
+<td>所需脚本</td>
+<td><a href="https://c.mipcdn.com/static/v1/mip-fixed/mip-fixed.js">https://c.mipcdn.com/static/v1/mip-fixed/mip-fixed.js</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="%E7%A4%BA%E4%BE%8B">示例</h2><h3 id="%E9%A1%B6%E9%83%A8%E6%82%AC%E6%B5%AE">顶部悬浮</h3><pre><code class="lang-html">&lt;mip-fixed type=&quot;top&quot;&gt;
+    自定义内容，可以嵌套其他组件
+&lt;/mip-fixed&gt;
+</code></pre>
+<h3 id="%E5%BA%95%E9%83%A8%E6%82%AC%E6%B5%AE">底部悬浮</h3><pre><code class="lang-html">&lt;mip-fixed type=&quot;bottom&quot;&gt;
+    自定义内容，可以嵌套其他组件
+&lt;/mip-fixed&gt;
+</code></pre>
+<h3 id="%E5%B7%A6%E8%BE%B9%E6%82%AC%E6%B5%AE">左边悬浮</h3><p>规则：属性 <code>bottom</code> 或 <code>top</code> 必须有一个</p>
+<pre><code class="lang-html">&lt;mip-fixed type=&quot;left&quot; bottom=&quot;50px&quot;&gt;
+    自定义内容，可以嵌套其他组件
+&lt;/mip-fixed&gt;
+</code></pre>
+<h3 id="%E5%8F%B3%E8%BE%B9%E6%82%AC%E6%B5%AE">右边悬浮</h3><p>规则：属性 <code>bottom</code> 或 <code>top</code> 必须有一个</p>
+<pre><code class="lang-html">&lt;mip-fixed type=&quot;right&quot; top=&quot;50px&quot;&gt;
+    自定义内容，可以嵌套其他组件
+&lt;/mip-fixed&gt;
+</code></pre>
+<h3 id="%E6%94%AF%E6%8C%81%20%3Ccode%3E%26lt%3Bmip-gototop%26gt%3B%3C%2Fcode%3E">支持 <code>&lt;mip-gototop&gt;</code></h3><pre><code class="lang-html">&lt;mip-fixed type=&quot;gototop&quot;&gt;
+    &lt;mip-gototop&gt;&lt;/mip-gototop&gt;
+&lt;/mip-fixed&gt;
+</code></pre>
+<h3 id="%E5%85%B3%E9%97%AD%E6%82%AC%E6%B5%AE%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E6%B3%95">关闭悬浮元素的方法</h3><ol>
+<li><p>给 <code>&lt;mip-fixed&gt;</code> 标签添加一个自定义的 <code>id=customid</code>。</p>
+</li>
+<li><p>给需要点击关闭悬浮元素的标签添加属性 <code>on=&quot;tap:customid.close&quot;</code>。</p>
+</li>
+</ol>
+<pre><code class="lang-html">&lt;mip-fixed type=&quot;top&quot; id=&quot;customid&quot;&gt;
+  &lt;div&gt;我是顶部的fixed&lt;/div&gt;
+  &lt;div  class=&quot;btn_style&quot; on=&quot;tap:customid.close&quot;&gt;我是关闭按钮&lt;/div&gt;
+&lt;/mip-fixed&gt;
+</code></pre>
+<h2 id="%E5%B1%9E%E6%80%A7">属性</h2><h3 id="type">type</h3><p>说明：悬浮类型<br>必选项：是<br>类型：字符串<br>取值范围：<code>top/bottom/right/left</code></p>
+<h3 id="top">top</h3><p>说明：距离屏幕顶部距离<br>必选项: 否<br>类型：字符串<br>取值范围：数值+单位，例如：<code>50(px|em|rem|vh|vw|vmin|vmax|cm|mm|q|in|pc|pt)</code><br>默认值：<code>auto</code></p>
+<h3 id="bottom">bottom</h3><p>说明：距离屏幕底部距离<br>必选项: 否<br>取值范围：数值+单位，例如：<code>50(px|em|rem|vh|vw|vmin|vmax|cm|mm|q|in|pc|pt)</code><br>默认值：<code>auto</code></p>
+<h2 id="%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">注意事项</h2><h3 id="%E6%82%AC%E6%B5%AE%E7%B1%BB%E5%9E%8B">悬浮类型</h3><ul>
+<li><p><code>type</code> 为 <code>top</code>, <code>bottom</code> 类别不需要添加属性：<code>top/bottom</code>。</p>
+</li>
+<li><p><code>type</code> 为 <code>left</code>, <code>right</code> 类别需要至少添加一个 <code>top/bottom</code> 属性，优先用 <code>bottom</code>。</p>
+</li>
+<li><p><code>type</code> 为 <code>gototop</code> 类别不需要任何属性。</p>
+</li>
+</ul>

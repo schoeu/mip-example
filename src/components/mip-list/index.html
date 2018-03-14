@@ -1,0 +1,109 @@
+<h1 id="mip-list%20%E5%88%97%E8%A1%A8%E7%BB%84%E4%BB%B6">mip-list 列表组件</h1><p>可以渲染同步数据，或者异步请求数据后渲染。</p>
+<table>
+<thead>
+<tr>
+<th>标题</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>通用</td>
+</tr>
+<tr>
+<td>支持布局</td>
+<td>responsive, fixed-height, fill, container, fixed</td>
+</tr>
+<tr>
+<td>所需脚本</td>
+<td><a href="https://c.mipcdn.com/static/v1/mip-list/mip-list.js">https://c.mipcdn.com/static/v1/mip-list/mip-list.js</a><br/> <a href="https://c.mipcdn.com/static/v1/mip-mustache/mip-mustache.js">https://c.mipcdn.com/static/v1/mip-mustache/mip-mustache.js</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="%E7%A4%BA%E4%BE%8B">示例</h2><h3 id="%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95">基本用法</h3><p>[info]JSONP 异步请求的接口需要遵循规范 <code>callback</code> 为 <code>&#39;callback&#39;</code>。</p>
+<pre><code class="lang-html">&lt;mip-list src=&quot;https://xxx&quot; preLoad&gt;
+    &lt;template type=&quot;mip-mustache&quot;&gt;
+        &lt;div&gt;
+            &lt;li&gt;name: {{name}}&lt;/li&gt;
+            &lt;li&gt;alias: {{alias}}&lt;/li&gt;
+        &lt;/div&gt;
+    &lt;/template&gt;
+&lt;/mip-list&gt;
+</code></pre>
+<h3 id="%E5%AE%9A%E5%88%B6%E6%A8%A1%E6%9D%BF">定制模板</h3><pre><code class="lang-html">&lt;mip-list template=&quot;mip-template-id&quot; src=&quot;https://xxx&quot; preLoad&gt;
+    &lt;template type=&quot;mip-mustache&quot; id=&quot;mip-template-id&quot;&gt;
+        &lt;div&gt;
+            &lt;li&gt;name: {{name}}&lt;/li&gt;
+            &lt;li&gt;alias: {{alias}}&lt;/li&gt;
+        &lt;/div&gt;
+    &lt;/template&gt;
+&lt;/mip-list&gt;
+</code></pre>
+<h3 id="%E5%90%8C%E6%AD%A5%E6%95%B0%E6%8D%AE">同步数据</h3><pre><code class="lang-html">&lt;mip-list synchronous-data&gt;
+    &lt;script type=&quot;application/json&quot;&gt;
+        {
+            &quot;items&quot;: [
+                {
+                    &quot;name&quot;: &quot;lee&quot;,
+                    &quot;alias&quot;: &quot;xialong&quot;
+                }, {
+                    &quot;name&quot;: &quot;ruige&quot;,
+                    &quot;alias&quot;: &quot;ruimm&quot;
+                }, {
+                    &quot;name&quot;: &quot;langbo&quot;,
+                    &quot;alias&quot;: &quot;bobo&quot;
+                }
+            ]
+        }
+    &lt;/script&gt;
+    &lt;template type=&quot;mip-mustache&quot;&gt;
+        &lt;div&gt;
+            &lt;li&gt;name: {{name}}&lt;/li&gt;
+            &lt;li&gt;alias: {{alias}}&lt;/li&gt;
+        &lt;/div&gt;
+    &lt;/template&gt;
+&lt;/mip-list&gt;
+</code></pre>
+<h3 id="%E7%82%B9%E5%87%BB%E5%8A%A0%E8%BD%BD%E6%9B%B4%E5%A4%9A">点击加载更多</h3><p>[info]有 <code>has-more</code> 属性时，<code>&lt;mip-list&gt;</code> 标签必须要有 <code>id</code> 属性，同时需要有点击按钮的 DOM 节点，并且此节点有 <code>on</code> 属性，属性值为：<code>tap:对应mip-list的id.more</code></p>
+<pre><code class="lang-html">&lt;mip-list 
+    template=&quot;mip-template-id&quot;
+    src=&quot;http://xxx?a=a&amp;b=b&quot;
+    id=&quot;mip-list&quot;
+    has-more
+    pnName=&quot;pageNum&quot;
+    pn=2
+    timeout=&quot;3000&quot;
+    preLoad&gt;
+    &lt;template type=&quot;mip-mustache&quot; id=&quot;mip-template-id&quot;&gt;
+        &lt;div&gt;
+            &lt;li&gt;{{key}}: {{value}}&lt;/li&gt;
+        &lt;/div&gt;
+    &lt;/template&gt;
+&lt;/mip-list&gt;
+&lt;div class=&quot;mip-list-more&quot; on=&quot;tap:mip-list.more&quot;&gt; 点击查看更多 &lt;/div&gt;
+</code></pre>
+<h2 id="%E5%B1%9E%E6%80%A7">属性</h2><h3 id="src">src</h3><p>说明：异步请求的数据接口，如果没有其他参数结尾请不要带 <code>？</code><br>必选项：否<br>类型：字符串<br>取值范围：必须是 HTTPS 的<br>单位：无<br>默认值：无</p>
+<h3 id="synchronous-data">synchronous-data</h3><p>说明：使用同步数据开关属性<br>必选项：否<br>类型：字符串<br>取值范围：无<br>单位：无<br>默认值：无 </p>
+<h3 id="id">id</h3><p>说明：<code>&lt;mip-list&gt;</code> 组件 <code>id</code><br>必选项：否<br>类型：字符串<br>取值范围：字符串<br>单位：无<br>默认值：无</p>
+<h3 id="has-more">has-more</h3><p>说明：是否有点击展开更多功能<br>必选项：否<br>类型：字符串<br>取值范围：无<br>单位：无<br>默认值：无</p>
+<h3 id="pnName">pnName</h3><p>说明：翻页变量名<br>必选项：否<br>类型：字符串<br>取值范围：无<br>单位：无<br>默认值：pn</p>
+<h3 id="pn">pn</h3><p>说明：翻页初始页码，每次请求会自动加 1<br>必选项：否<br>类型：整数<br>取值范围：无<br>单位：无<br>默认值：1 </p>
+<h3 id="preLoad">preLoad</h3><p>说明：异步加载数据，如果添加 <code>preLoad</code> 参数，则在初始化时加载第一页内容<br>必选项：否    </p>
+<h3 id="timeout">timeout</h3><p>说明：fetch-jsonp 请求的超时时间<br>必选项：否<br>类型：整数<br>取值范围：无<br>单位：ms<br>默认值：5000</p>
+<h2 id="%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">注意事项</h2><ul>
+<li>接口返回的数据格式需要是如下格式：<ul>
+<li>status：0 表示请求成功。</li>
+<li>items：[] 是需要渲染的数序。</li>
+<li>isEnd：表示是否是最后一页，非必须。</li>
+</ul>
+</li>
+</ul>
+<pre><code>{
+    status: 0, 
+    data: { 
+        items: [], 
+        isEnd: 1 
+    }
+}  
+</code></pre>

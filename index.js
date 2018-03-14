@@ -4,9 +4,18 @@ const app = new Koa();
 const Router = require('koa-router');
 const router = new Router();
 
-const docs = require('./backend/refresh_docs');
+const render = require('koa-art-template');
 
-const defaultPort = 8910;
+const docs = require('./backend/refresh_docs');
+const config = require('./config/conf')();
+
+const defaultPort = 3000;
+
+render(app, {
+    root: path.join(__dirname, 'view'),
+    extname: '.art',
+    debug: process.env.NODE_ENV !== 'production'
+});
 
 app.use(router.routes());
 app.use(router.allowedMethods());
@@ -16,4 +25,7 @@ app.use(async ctx => {
     ctx.body = exPath;
 });
 
-app.listen(defaultPort);
+
+art.render();
+
+app.listen(config.port || defaultPort);

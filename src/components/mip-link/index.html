@@ -1,0 +1,35 @@
+<h1 id="mip-link%20%E8%B7%B3%E8%BD%AC%E9%93%BE%E6%8E%A5">mip-link 跳转链接</h1><p>实现两个 MIP 页面之间互相跳转的功能。</p>
+<table>
+<thead>
+<tr>
+<th>标题</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>通用</td>
+</tr>
+<tr>
+<td>支持布局</td>
+<td>N/S</td>
+</tr>
+<tr>
+<td>所需脚本</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h2 id="%E5%8D%87%E7%BA%A7%E8%AF%B4%E6%98%8E">升级说明</h2><p>由于 <code>&lt;mip-link&gt;</code> 的标签不利于搜索引擎识别，故将 <code>&lt;mip-link&gt;</code> 的自定义标签升级成 <code>&lt;a&gt;</code> 标签上直接扩展，使用方法见下文。之前的方式还是能够正常使用。</p>
+<h2 id="%E7%A4%BA%E4%BE%8B">示例</h2><pre><code class="lang-html">&lt;a data-type=&quot;mip&quot; data-title=&quot;目标页面标题&quot; href=&quot;/doc/00-mip-101.html&quot;&gt;链接文字&lt;/a&gt;
+</code></pre>
+<h2 id="%E5%B1%9E%E6%80%A7">属性</h2><h3 id="href">href</h3><p>说明：目标网址<br>必选项：是<br>类型：字符串<br>取值范围：<code>https?://.*</code>, <code>mailto:.*</code>, <code>tel:.*</code></p>
+<h3 id="data-type">data-type</h3><p>说明：URL 类型，目前只能取值 <code>mip</code>，代表是这个子链的 MIP 页面<br>必选项：否<br>类型：字符串<br>取值范围：mip<br>默认值：<code>&quot;&quot;</code></p>
+<p>[notice] 如果不是 href 对应的落地页面不是 MIP 页面，请去掉这个属性</p>
+<h3 id="data-title">data-title</h3><p>说明：目标页面标题<br>必选项：否<br>类型：字符串<br>取值范围：任何<br>默认值：<code>&quot;&quot;</code></p>
+<h3 id="mip-link%20%E6%A0%87%E7%AD%BE%E4%BD%BF%E7%94%A8%E7%9A%84%E6%96%B9%E5%BC%8F(%E4%B8%8D%E6%8E%A8%E8%8D%90)">mip-link 标签使用的方式(不推荐)</h3><p>1、引入脚本</p>
+<pre><code>https://c.mipcdn.com/static/v1/mip-link/mip-link.js
+</code></pre><p>2、添加代码</p>
+<pre><code class="lang-html">&lt;mip-link title=&quot;目标页面标题&quot; href=&quot;/doc/00-mip-101.html&quot;&gt;链接文字&lt;/mip-link&gt;
+</code></pre>

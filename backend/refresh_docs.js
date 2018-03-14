@@ -6,6 +6,7 @@ const path = require('path');
 
 const coreTags = require('../data/core_tags');
 const logger = require('../libs/logger');
+const writeData = require('../backend/writeData');
 
 const extNames = ['mip-extensions/src', 'mip-extensions-platform'];
 
@@ -31,14 +32,16 @@ function walk(extPath = '', paths = []) {
         cores.forEach(it => {
             let detailPath = path.join(rPath, it);
             let files = fs.readdirSync(detailPath);
-            files.forEach(it => {
-                if (/^readme.md$/i.test(it)) {
-                    let rdPath = path.join(detailPath, it);
+            files.forEach(readmeName => {
+                if (/^readme.md$/i.test(readmeName)) {
+                    let rdPath = path.join(detailPath, readmeName);
                     fs.readFile(rdPath, (err, data) => {
                         if (err) {
                             logger.error('Read readme.md error: ', err);
                         };
-                        console.log(data.toString());
+                        
+                        // 转换为html，写入文件夹中。
+                        writeData(it, data.toString());
                     });
                 }
             });

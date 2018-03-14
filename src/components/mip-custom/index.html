@@ -1,0 +1,138 @@
+<h1 id="mip-custom">mip-custom</h1><h2 id="%E6%96%87%E6%A1%A3%E4%BF%A1%E6%81%AF">文档信息</h2><ul>
+<li>所属产品项目：定制化MIP</li>
+<li>产品版本：v1.0.11</li>
+<li>文档版本：v1.0.3</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>撰写人</th>
+<th>修改日期</th>
+<th>修改内容</th>
+<th>更新版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>王培</td>
+<td>2017-04-19</td>
+<td>创建文档</td>
+<td>v1.0.0</td>
+</tr>
+<tr>
+<td>王培</td>
+<td>2017-05-02</td>
+<td>增加必要属性 title</td>
+<td>v1.0.1</td>
+</tr>
+<tr>
+<td>王培</td>
+<td>2017-05-03</td>
+<td>增加必要脚本说明</td>
+<td>v1.0.2</td>
+</tr>
+<tr>
+<td>王培</td>
+<td>2017-06-06</td>
+<td>修改文档示例</td>
+<td>v1.0.3</td>
+</tr>
+<tr>
+<td>董士浩</td>
+<td>2017-09-08</td>
+<td>引入<code>mipserver</code>字体文件</td>
+<td>v1.0.16</td>
+</tr>
+<tr>
+<td>董士浩</td>
+<td>2017-10-20</td>
+<td>定制化 MIP 支持A区渲染定制化内容</td>
+<td>v1.2.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="%E8%AF%B4%E6%98%8E">说明</h2><p>mip-custom 定制化 MIP 组件，想在页面中加入定制化内容，必须引入这个组件。MIP 页面改造参考官网文档：<a href="https://www.mipengine.org/doc/00-mip-101.html。">https://www.mipengine.org/doc/00-mip-101.html。</a></p>
+<table>
+<thead>
+<tr>
+<th>标题</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>通用</td>
+</tr>
+<tr>
+<td>支持布局</td>
+<td>responsive,fixed-height,fill,container,fixed</td>
+</tr>
+<tr>
+<td>所需脚本</td>
+<td><a href="https://c.mipcdn.com/static/v1/mip-custom/mip-custom.js">https://c.mipcdn.com/static/v1/mip-custom/mip-custom.js</a><br/> <a href="https://c.mipcdn.com/static/v1/mip-mustache/mip-mustache.js">https://c.mipcdn.com/static/v1/mip-mustache/mip-mustache.js</a><br><a href="https://c.mipcdn.com/static/v1/mip-fixed/mip-fixed.js">https://c.mipcdn.com/static/v1/mip-fixed/mip-fixed.js</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="%E7%A4%BA%E4%BE%8B">示例</h2><h3 id="%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95">基本用法</h3><pre><code class="lang-html">&lt;mip-custom&gt;
+    &lt;script type=&quot;application/json&quot;&gt;
+        {
+            &quot;accid&quot;: &quot;e2217bab684fbb898dccf04b&quot;,
+            &quot;title&quot;: &quot;%E8%BF%99%E9%87%8C%E6%98%AF%E6%A0%87%E9%A2%98&quot;
+        }
+    &lt;/script&gt;
+&lt;/mip-custom&gt;
+</code></pre>
+<h3 id="%E5%AE%8C%E6%95%B4%E7%89%88%E7%A4%BA%E4%BE%8B">完整版示例</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html mip&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,minimum-scale=1,initial-scale=1&quot; /&gt;
+    &lt;title&gt;title&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://c.mipcdn.com/static/v1/mip.css&quot;&gt;
+    &lt;link rel=&quot;canonical&quot; href=&quot;对应的 h5 页面 url&quot;&gt;
+    &lt;style mip-custom&gt;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;定制化MIP示例页面&lt;/h2&gt;
+    &lt;!-- 顶部定制化内容区域，可自由放置 --&gt;
+    &lt;mip-custom position=&quot;top&quot; source-type=&quot;med_tag&quot;&gt;
+       &lt;script type=&quot;application/json&quot;&gt;
+            {
+                &quot;accid&quot;: &quot;e2217bab684fbb898dccf04b&quot;,
+                &quot;title&quot;: &quot;%E8%BF%99%E9%87%8C%E6%98%AF%E6%A0%87%E9%A2%98&quot;
+            }
+        &lt;/script&gt;
+    &lt;/mip-custom&gt;
+    &lt;p&gt;正文&lt;/p&gt;
+     &lt;!-- 底部定制化内容区域，必须放在内容的下方、`script`标签的上方 --&gt;
+    &lt;mip-custom&gt;
+       &lt;script type=&quot;application/json&quot;&gt;
+            {
+                &quot;accid&quot;: &quot;e2217bab684fbb898dccf04b&quot;,
+                &quot;title&quot;: &quot;%E8%BF%99%E9%87%8C%E6%98%AF%E6%A0%87%E9%A2%98&quot;
+            }
+        &lt;/script&gt;
+    &lt;/mip-custom&gt;
+    &lt;script src=&quot;https://c.mipcdn.com/static/v1/mip.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://c.mipcdn.com/static/v1/mip-mustache/mip-mustache.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://c.mipcdn.com/static/v1/mip-custom/mip-custom.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h2 id="%E5%B1%9E%E6%80%A7">属性</h2><h3 id="position">position</h3><p>说明：标识定制化分区，目前分为两个区域 
+必选项：否 
+类型：字符串<br>取值范围：<code>top</code>：顶部区域，<strong>必须和<code>source-type</code>配合使用才能正确渲染内容</strong>。
+单位：无<br>默认值：<code>bottom</code>  </p>
+<h3 id="source-type">source-type</h3><p>说明：声明请求的资源 
+必选项：否 
+类型：字符串<br>取值范围：百度官方给出的资源号，<strong>必须和<code>position</code>配合使用才能正确渲染内容</strong>。
+单位：无<br>默认值：空  </p>
+<h3 id="accid">accid</h3><p>说明：分润平台帐号ID，暂时需要联系百度 PM 手工申请<br>必选项：是<br>类型：字符串<br>取值范围：无<br>单位：无<br>默认值：无   </p>
+<h3 id="title">title</h3><p>说明：页面内容标题，需要对中文编码（encodeURIComponent）<br>必选项：是<br>类型：字符串<br>取值范围：无<br>单位：无<br>默认值：无   </p>
+<h2 id="%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">注意事项</h2><ul>
+<li>每个 MIP 页面中的定制化模板，插入之前必须准备 <strong>accid</strong>，需要联系百度 PM 手工申请</li>
+<li>title 是页面中内容标题，<strong>不是</strong><code>&lt;title&gt;</code>标签中的文本，同时需要对中文编码（encodeURIComponent） </li>
+</ul>
