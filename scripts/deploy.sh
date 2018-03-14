@@ -19,7 +19,6 @@ then
         cd $ext_plat_path
         git pull
     fi
-    
 else
     mkdir -p $ext_code_path
     cd $ext_code_path
