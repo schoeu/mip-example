@@ -1,0 +1,25 @@
+{
+  "name": "mip-examples",
+  "version": "1.0.0",
+  "description": "Example for mip.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mip",
+    "example"
+  ],
+  "author": "MIP",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^5.0.0",
+    "moment": "^2.21.0",
+    "request": "^2.85.0",
+    "winston": "^2.4.1",
+    "winston-daily-rotate-file": "^1.7.2"
+  }
+}
