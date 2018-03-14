@@ -7,16 +7,16 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const path = require('path');
 
+const config = require('../config/conf')();
 const logger = require('../libs/logger');
-const coreTags = require('../data/core_tags');
-
 const scriptsPath = path.join(__dirname, '../scripts')
-const scriptName = 'deploy.sh';
 
 module.exports = async () => {
     // 执行命令
-    let extPath = path.join(scriptsPath, '../', 'mip_exts')
-    let command = 'sh ' + scriptsPath +'/'+ scriptName+ ' ' + extPath;
+    let extPath = path.join(scriptsPath, '../', 'mip_exts');
+    // sh command arg1 arg2 arg3
+    let commandArr = ['sh', path.join(scriptsPath, config.deployScript), extPath, config.extName, config.extPlatName];
+    let command = commandArr.join(' ');
     
     const { stdout, stderr } = await exec(command);
     if (stderr) {

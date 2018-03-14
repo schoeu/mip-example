@@ -1,8 +1,8 @@
 #/bin/sh
 
 script_path=$(cd `dirname $0` && pwd)
-ext_name=mip-extensions
-ext_name_plat=mip-extensions-platform
+ext_name=$1
+ext_name_plat=$2
 github_ext=https://github.com/mipengine/$ext_name.git
 github_ext_plat=https://github.com/mipengine/$ext_name_plat.git
 
