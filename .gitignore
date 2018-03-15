@@ -58,4 +58,4 @@ typings/
 .env
 
 mip_exts
-components/*
+src/components/*

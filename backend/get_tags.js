@@ -1,6 +1,7 @@
 /**
  * @file get_tags
  * @description 更新组件列表
+ * @date 2018-03-13
 */
 
 const util = require('util');

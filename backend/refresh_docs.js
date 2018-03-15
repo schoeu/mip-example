@@ -1,6 +1,11 @@
+/**
+ * @file refresh_docs.js
+ * @description 更新组件描述文档
+ * @date 2018-03-13
+*/
+
 const getTags = require('./get_tags');
 const util = require('util');
-//const fs = util.promisify(require('fs'));
 const fs = require('fs');
 const path = require('path');
 
@@ -10,7 +15,7 @@ const writeData = require('../backend/writeData');
 
 const extNames = ['mip-extensions/src', 'mip-extensions-platform'];
 
-async function refresh () {
+async function refresh() {
     const extPath = await getTags();
     walk(extPath, extNames);
 
@@ -39,7 +44,7 @@ function walk(extPath = '', paths = []) {
                         if (err) {
                             logger.error('Read readme.md error: ', err);
                         };
-                        
+
                         // 转换为html，写入文件夹中。
                         writeData(it, data.toString());
                     });
@@ -52,5 +57,3 @@ function walk(extPath = '', paths = []) {
 module.exports = {
     refresh: refresh
 };
-
-

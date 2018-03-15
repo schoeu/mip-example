@@ -10,6 +10,7 @@ module.exports = () => {
         extName: 'mip-extensions',
         extPlatName: 'mip-extensions-platform',
         componentsPath: path.join(__dirname, '../src/components'),
-        examplePageName: 'index.html'
+        fileExtName: '.art',
+        baseName: 'base'
     }
 };
