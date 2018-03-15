@@ -37,6 +37,15 @@ router.get('/', ctx => {
     ctx.body = 'Hello';
 });
 
+// 更新文档
+// TODO: 暂时留个口，以供测试
+router.get('/api/update', async ctx => {
+    const docs = require('./backend/refresh_docs');
+    // 文档生成&编译
+    await docs.refresh();
+    ctx.body = 'done';
+});
+
 app.listen(config.port || defaultPort);
 
 app.on('error', function (err) {

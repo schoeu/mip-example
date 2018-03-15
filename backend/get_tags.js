@@ -18,7 +18,7 @@ module.exports = async () => {
     // sh command arg1 arg2 arg3
     let commandArr = ['sh', path.join(scriptsPath, config.deployScript), extPath, config.extName, config.extPlatName];
     let command = commandArr.join(' ');
-    
+    console.log('command: ', command);
     const { stdout, stderr } = await exec(command);
     if (stderr) {
         logger.error('Get github extensions code error: ', stderr)

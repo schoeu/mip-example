@@ -1,14 +1,15 @@
 #/bin/sh
 
 script_path=$(cd `dirname $0` && pwd)
-ext_name=$1
-ext_name_plat=$2
-github_ext=https://github.com/mipengine/$ext_name.git
-github_ext_plat=https://github.com/mipengine/$ext_name_plat.git
+ext_name=$2
+mip_name=$3
+mipengine_url=https://github.com/mipengine/
+github_ext=$mipengine_url$ext_name.git
+github_ext_mip=$mipengine_url$mip_name.git
 
 ext_code_path=$1
 ext_path=$ext_code_path/$ext_name
-ext_plat_path=$ext_code_path/$ext_name_plat
+ext_plat_path=$ext_code_path/$mip_name
 
 if [ -d "$ext_code_path" ];
 then
@@ -24,5 +25,5 @@ else
     cd $ext_code_path
 
     git clone $github_ext
-    git clone $github_ext_plat
+    git clone $github_ext_mip
 fi

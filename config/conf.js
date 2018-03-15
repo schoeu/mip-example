@@ -8,9 +8,9 @@ module.exports = () => {
         logLevel: 'info',
         deployScript: 'deploy.sh',
         extName: 'mip-extensions',
-        extPlatName: 'mip-extensions-platform',
+        extPlatName: 'mip',
         componentsPath: path.join(__dirname, '../src/components'),
-        fileExtName: '.art',
+        fileExtName: '.html',
         baseName: 'base'
     }
 };
