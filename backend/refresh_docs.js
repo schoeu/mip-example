@@ -10,7 +10,7 @@ const fs = require('fs');
 const path = require('path');
 
 const coreTags = require('../data/core_tags');
-const config = require('../config/conf')();
+const config = require('../config/conf');
 const logger = require('../libs/logger');
 const writeData = require('../backend/writeData');
 

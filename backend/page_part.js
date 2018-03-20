@@ -4,7 +4,7 @@
  * @date 2018-03-13
 */
 
-const config = require('../config/conf')();
+const config = require('../config/conf');
 const fbName = 'base.html';
 const prefixStr = `{{extend '../${config.baseName + config.fileExtName || fbName}'}}{{block 'content'}}`;
 const suffixStr = `{{/block}}`;

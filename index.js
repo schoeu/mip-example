@@ -1,12 +1,12 @@
 const path = require('path');
 const fs = require('fs-extra');
+
 const Koa = require('koa');
 const app = new Koa();
-
 const Router = require('koa-router');
 const router = new Router();
-
 const render = require('koa-art-template');
+
 const config = require('./config/conf')();
 const logger = require('./libs/logger');
 const defaultPort = 3000;

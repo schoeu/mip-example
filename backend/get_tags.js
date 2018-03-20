@@ -8,7 +8,7 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const path = require('path');
 
-const config = require('../config/conf')();
+const config = require('../config/conf');
 const logger = require('../libs/logger');
 const scriptsPath = path.join(__dirname, '../scripts')
 

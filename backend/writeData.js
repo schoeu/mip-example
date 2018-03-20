@@ -9,7 +9,7 @@ const fs = require('fs-extra');
 const marked = require('marked');
 const renderer = new marked.Renderer();
 const logger = require('../libs/logger');
-const config = require('../config/conf')();
+const config = require('../config/conf');
 const addFix = require('./page_part');
 
 async function ensureDir (directory) {
