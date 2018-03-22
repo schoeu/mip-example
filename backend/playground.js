@@ -11,7 +11,9 @@ module.exports = {
     render: (filename, data) => {
         let html = '';
     
-        html = template(path.join(dir, filename), data);
+        html = template(path.join(dir, filename), {
+            htmldata: data
+        });
         
         return html;
     }

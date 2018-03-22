@@ -24,6 +24,7 @@ module.exports = async (name = '') => {
     return '';
 };
 
+// 截取出示例部分
 function analysisDom($) {
     var hData = [];
     var start = $('h2#示例');
@@ -35,10 +36,18 @@ function analysisDom($) {
             hData.push(out);
         }
     }
-    console.log(hData.join('\n'));
     return hData.join('\n');
 }
 
+// 获取外层数据
 function outHtml(el, $) {
+    if (el.is('pre')) {
+        el = $(el.html())
+    }
+    if (el.is('code')) {
+        el = $(el.html())
+    }
+
+    // 有部分示例中内部的标签，是否 .replace(/<[\/]?code>/g, '')
     return $('<div>').append(el.clone()).html();
 }

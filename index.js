@@ -42,15 +42,17 @@ router.get('/', ctx => {
 
 pg.setDir('./playground');
 // playground路由
-router.get('/playground/:name', ctx => {
+router.get('/playground/:name', async ctx => {
     let tpl = ctx.params.name || '';
     if (tpl) {
-        let {data, err} = getPart(tpl);
-        console.log(data, err);
+        let data = await getPart(tpl);
+        console.log(data);
+        let html = pg.render('index.html', data);
+        ctx.body = html;
     }
-    
-    let html = pg.render('index.html');
-    ctx.body = html;
+    else {
+        ctx.body = 'No template to render.';
+    }
 });
 
 // 更新文档
