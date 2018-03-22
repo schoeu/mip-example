@@ -22,7 +22,7 @@ async function ensureDir (directory) {
 
 // 定制markdown head
 renderer.heading = function (text, level) {
-    return '<h' + level + ' id="'+ encodeURIComponent(text) +'">' + text + '</h' + level + '>';
+    return `<h${level} id="${text}">${text}</h${level}>`;
 };
 
 /**

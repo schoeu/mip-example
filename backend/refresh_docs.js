@@ -12,7 +12,7 @@ const path = require('path');
 const coreTags = require('../data/core_tags');
 const config = require('../config/conf');
 const logger = require('../libs/logger');
-const writeData = require('../backend/writeData');
+const writeData = require('../backend/write_data');
 
 async function refresh() {
     const extPath = await getTags();
